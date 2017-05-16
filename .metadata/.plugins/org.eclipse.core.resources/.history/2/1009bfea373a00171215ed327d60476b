@@ -1,0 +1,37 @@
+package br.imd.visao;
+
+import java.awt.Container;
+import java.awt.FlowLayout;
+import javax.swing.*;
+
+public class meuConteudo extends JFrame {
+	
+	public meuConteudo(){
+		Container ct = this.getContentPane();
+		ct.setLayout(new FlowLayout());
+		
+		/**
+		 * Criando botões
+		 */
+		
+		/*JButton b1 = new JButton("Teste 1");
+		
+		ct.add(b1);
+		
+		setSize(400,350);
+		setTitle("Conteúdo da árvore");
+		setDefaultCloseOperation(EXIT_ON_CLOSE);*/
+		
+		/**
+		 * Combinação de Layout
+		 */
+		
+		JPanel panel = new JPanel();
+		
+	}
+	
+	public static void main(String[] args){
+		meuConteudo mc = new meuConteudo();
+		mc.setVisible(true);
+	}
+}
