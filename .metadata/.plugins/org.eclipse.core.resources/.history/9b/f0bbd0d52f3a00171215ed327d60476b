@@ -1,0 +1,8 @@
+package br.imd.visao;
+
+import javax.swing.JFrame;
+
+public class minhaJanela extends JFrame{
+	
+
+}

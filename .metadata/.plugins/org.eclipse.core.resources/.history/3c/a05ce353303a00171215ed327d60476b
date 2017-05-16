@@ -1,0 +1,9 @@
+package br.imd.visao;
+
+import java.awt.Container;
+import java.awt.FlowLayout;
+import java.swing.*;
+
+public class meuConteudo extends JFrame {
+
+}
