@@ -14,6 +14,5 @@ public class No {
 
     public void setAluno(Aluno aluno) {
         this.aluno = aluno;
-    }
-    
+    }    
 }

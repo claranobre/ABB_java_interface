@@ -60,13 +60,43 @@ public class Tree {
 		}
 		
 	}
+
+	/**
+	 * Método Buscar
+	 * @return 
+	 */
 	
-	// faltando implementar a busca
+
+	
 	
 	// faltando implementar percorrerInOrdem();
 	
+	 public void emordem(No no) {
+	        if(no != null){
+	        	emordem(no.esquerda);
+			System.out.print(no.valor + " ");
+	        	emordem(no.direita);
+	        }
+	    }
+	
 	// faltando implementar percorrerPreOrdem();
 	
+	 public void prefixado(No no) {
+	        if(no != null){
+	            System.out.print(no.valor + " ");
+	            prefixado(no.esquerda);
+	            prefixado(no.direita);
+	        }
+	    }
+	
 	// faltando implementar percorrerPosOrdem();
+	 
 
+	    public void posfixado(No no) {
+	        if(no != null){
+	        	posfixado(no.esquerda);
+	        	posfixado(no.direita);
+	            System.out.print(no.valor + " ");
+	        }
+	    }
 }
