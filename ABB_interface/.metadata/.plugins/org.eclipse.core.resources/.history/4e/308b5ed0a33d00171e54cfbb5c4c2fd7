@@ -1,0 +1,17 @@
+package br.imd.vision;
+
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+
+public class CaixaDeTexto extends JFrame {
+	private JTextField inserir;
+	private JButton insere;
+	
+	public CaixaDeTexto(){
+		setLayout(new FlowLayout());
+	}
+
+}

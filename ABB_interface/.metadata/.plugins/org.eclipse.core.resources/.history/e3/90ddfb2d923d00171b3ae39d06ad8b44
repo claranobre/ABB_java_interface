@@ -1,0 +1,20 @@
+package br.imd.control;
+
+import java.util.ArrayList;
+
+public class No {
+	
+	private Aluno aluno;
+
+    public No(ArrayList<Aluno> alunos) {
+        this.aluno = alunos;
+    }
+
+    public Aluno getAluno() {
+        return aluno;
+    }
+
+    public void setAluno(Aluno aluno) {
+        this.aluno = aluno;
+    }    
+}

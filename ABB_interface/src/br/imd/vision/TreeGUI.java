@@ -1,12 +1,12 @@
 package br.imd.vision;
 
-
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.xml.soap.Node;
 
 public class TreeGUI extends JFrame{
+	
 	private JPanel contentPane;
 	public Node node;
 	public DrawTree drawer;

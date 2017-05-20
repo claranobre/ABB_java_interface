@@ -1,0 +1,34 @@
+package br.imd.vision;
+
+import java.awt.Container;
+import java.awt.FlowLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+
+public class TelaPrincipal extends JFrame implements ActionListener{
+	public TelaPrincipal(){
+	Container ct = this.getContentPane();
+	ct.setLayout(new FlowLayout());
+	
+	JButton botao1 = new JButton("Inserir");
+	JButton botao2 = new JButton("Deletar");
+	JButton botao3 = new JButton("Buscar");
+	JButton botao4 = new JButton("Imprimir");
+	
+	ct.add(botao1);
+	ct.add(botao2);
+	ct.add(botao3);
+	ct.add(botao4);
+	
+	setSize(400, 350);
+	setTitle("Botoes");
+	setDefaultCloseOperation(EXIT_ON_CLOSE);
+	}
+	
+	public static void main(String[] args){
+		TelaPrincipal mc = new TelaPrincipal();
+		mc.setVisible(true);
+	}
+}

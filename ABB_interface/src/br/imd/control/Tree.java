@@ -1,113 +1,166 @@
-package br.imd;
+package br.imd.control;
 
-public class Tree {
-	
+import java.awt.BasicStroke;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+
+import javax.swing.JPanel;
+
+public class Tree extends JPanel {
+
 	private No root;
 	private Tree leftTree;
 	private Tree rightTree;
-	
-	public Tree(){
+	private int height;
+	private int posX;
+	private int posY;
+	private int tam = 50; /* valor do tamanho base da Ã¡rvore */
+
+	public Tree() {
 		// construtor vazio
 	}
-	
-	public Tree getRightTree(){
+
+	public Tree getRightTree() {
 		return rightTree;
 	}
-	
-	public void setRightTree(Tree rightTree){
+
+	public void setRightTree(Tree rightTree) {
 		this.rightTree = rightTree;
 	}
-	
-	public Tree getLeftTree(){
+
+	public Tree getLeftTree() {
 		return leftTree;
 	}
-	
-	public void setLeftTree(Tree leftTree){
+
+	public void setLeftTree(Tree leftTree) {
 		this.leftTree = leftTree;
 	}
-	
-	 public No getRoot() {
-	        return root;
-	 }
+
+	public No getRoot() {
+		return root;
+	}
 
 	public void setRoot(No root) {
-	        this.root = root;
+		this.root = root;
 	}
-	
+
+	public int getHeight() {
+		return height;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+	public void setPosX(int posX) {
+		this.posX = posX;
+	}
+
+	public int getPosY() {
+		return posY;
+	}
+
+	public void setPosY(int posY) {
+		this.posY = posY;
+	}
+
+	public int getPosX() {
+		return posX;
+	}
+
 	public void insereAluno(int matricula, String nome) {
-        Aluno aluno = new Aluno(matricula, nome);
-        No no = new No(aluno);
-        inserir(no);
-    }
+		Aluno aluno = new Aluno(matricula, nome);
+		No no = new No(aluno);
+		inserir(no);
+	}
 
 	private void inserir(No no) {
-		if(this.root == null){
-		   this.root = no;
-		}
-		else {
-			if (no.getAluno().getMatricula() > this.root.getAluno().getMatricula()){
-				if (this.rightTree == null){
+		if (this.root == null) {
+			this.root = no;
+		} else {
+			if (no.getAluno().getMatricula() > this.root.getAluno().getMatricula()) {
+				if (this.rightTree == null) {
 					this.rightTree = new Tree();
 				}
 				this.rightTree.inserir(no);
-			}
-			else if (no.getAluno().getMatricula() < this.root.getAluno().getMatricula()){
-				if (this.leftTree == null){
+			} else if (no.getAluno().getMatricula() < this.root.getAluno().getMatricula()) {
+				if (this.leftTree == null) {
 					this.leftTree = new Tree();
 				}
 				this.leftTree.inserir(no);
 			}
 		}
-		
+
 	}
 
-	public Tree buscar(int matricula, Tree busca){
-			if(matricula < busca.root.getAluno().getMatricula()){
-				if(busca.leftTree == null){
-					System.out.println("No não Encontrado " + matricula);
-					return null;
-				}
-				else{
-					buscar(matricula, busca.leftTree);
-				}
+	public Tree buscar(int matricula, Tree busca) {
+		if (matricula < busca.root.getAluno().getMatricula()) {
+			if (busca.leftTree == null) {
+				System.out.println("No nao Encontrado " + matricula);
+				return null;
+			} else {
+				buscar(matricula, busca.leftTree);
 			}
-			else if(matricula == busca.root.getAluno().getMatricula()){
-				System.out.println("No Encontrado, aluno: " + busca.root.getAluno().getNome());
-				return busca;
+		} else if (matricula == busca.root.getAluno().getMatricula()) {
+			System.out.println("No Encontrado, aluno: " + busca.root.getAluno().getNome());
+			return busca;
+		} else {
+			if (busca.rightTree == null) {
+				System.out.println("No nao Encontrado: " + matricula);
+				return null;
+			} else {
+				buscar(matricula, busca.rightTree);
 			}
-			else{
-				if(busca.rightTree == null){
-					System.out.println("No não Encontrado: " + matricula);
-					return null;
-				}
-				else{
-					buscar(matricula, busca.rightTree);
-				}
-			}
-		return null;	
+		}
+		return null;
 	}
-		
-	 public void emordem(Tree node) {
-	        if(node != null){
-	        	emordem(node.leftTree);
-	        	System.out.println(node.root.getAluno().getMatricula() + " " + node.root.getAluno().getNome());
-	        	emordem(node.rightTree);
-	        }
-	    }
-	
-	 public void prefixado(Tree node) {
-		 if(node != null){
-			 System.out.println(node.root.getAluno().getMatricula() + " " + node.root.getAluno().getNome());
-	            prefixado(node.leftTree);
-	            prefixado(node.rightTree);
-	        }
-	    }
 
-	    public void posfixado(Tree node) {
-	        if(node != null){
-	        	posfixado(node.leftTree);
-	        	posfixado(node.rightTree);
-	            System.out.println(node.root.getAluno().getMatricula() + " " + node.root.getAluno().getNome());
-	        }
-	    }
+	public void emordem(Tree node) {
+		if (node != null) {
+			emordem(node.leftTree);
+			System.out.println(node.root.getAluno().getMatricula() + " " + node.root.getAluno().getNome());
+			emordem(node.rightTree);
+		}
+	}
+
+	public void prefixado(Tree node) {
+		if (node != null) {
+			System.out.println(node.root.getAluno().getMatricula() + " " + node.root.getAluno().getNome());
+			prefixado(node.leftTree);
+			prefixado(node.rightTree);
+		}
+	}
+
+	public void posfixado(Tree node) {
+		if (node != null) {
+			posfixado(node.leftTree);
+			posfixado(node.rightTree);
+			System.out.println(node.root.getAluno().getMatricula() + " " + node.root.getAluno().getNome());
+		}
+	}
+
+	public void paint(Graphics g) {
+		Graphics2D g2d = (Graphics2D) g;
+		Font fonte = new Font("Arial", Font.BOLD, 16);
+
+		if (this.leftTree != null) {
+			g2d.drawLine(posX + (tam / 2), posY + (tam / 2), this.leftTree.posX + (tam / 2),
+					this.leftTree.posY + (tam / 2));
+		}
+		if (this.rightTree != null) {
+			g2d.drawLine(posX + (tam / 2), posY + (tam / 2), this.rightTree.posX + (tam / 2),
+					this.rightTree.posY + (tam / 2));
+		}
+
+		g2d.setStroke(new BasicStroke(3));
+		g2d.drawOval(posX, posY, tam, tam);
+
+		/* Centralizar texto dentro do circulo */
+
+		g2d.setFont(fonte);
+		g2d.drawString(String.valueOf(root.getAluno().getMatricula()),
+				posX + ((tam / 2) - 4 * (String.valueOf(root.getAluno().getMatricula()).length())),
+				posY + ((tam / 2) + 4));
+		}
 }

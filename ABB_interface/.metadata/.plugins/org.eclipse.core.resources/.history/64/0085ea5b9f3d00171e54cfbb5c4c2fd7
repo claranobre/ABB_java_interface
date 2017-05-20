@@ -1,0 +1,33 @@
+package br.imd.vision;
+
+import java.awt.Container;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+
+public class CapturaEvento implements ActionListener{
+	Container ct = this.ContentPane();
+	//ct.setLayout(new FlowLayout());
+	
+	JButton botao1 = new JButton("Inserir");
+	JButton botao2 = new JButton("Deletar");
+	JButton botao3 = new JButton("Buscar");
+	JButton botao4 = new JButton("Imprimir");
+	
+	ct.add(botao1);
+	
+	
+	private Container ContentPane() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void janela() {
+	JFrame frame = new JFrame();
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+}
