@@ -1,0 +1,23 @@
+package br.imd.vision;
+
+import java.awt.event.ActionEvent;
+
+import javax.swing.JButton;
+
+public class ButtonHandler {
+	
+	private JButton inserir, salvar;
+	
+	public ButtonHandler(JButton inserir){
+		this.inserir = inserir;
+	}
+	
+	public void actionPerfomed(ActionEvent evento){
+		if(evento.getSource() == inserir){
+			JOptionPane.showMessageDialog(null, "Inserir dados do aluno");
+		}
+		if(evento.getSource() == salvar){
+			JOptionPane.showMessageDialog(null, "Dados salvos com sucesso");
+		}
+	}
+}

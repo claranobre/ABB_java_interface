@@ -35,7 +35,8 @@ public class TelaPrincipal extends JFrame{
 	
 	public static void main(String[] args){
 		
-		TelaPrincipal mc = new TelaPrincipal();		
+		TelaPrincipal mc = new TelaPrincipal();
+		CaixaDeTexto textfield = new CaixaDeTexto();		
 		mc.setVisible(true);
 	}
 }

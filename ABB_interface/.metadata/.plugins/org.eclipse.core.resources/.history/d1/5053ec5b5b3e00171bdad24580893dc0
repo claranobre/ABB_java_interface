@@ -1,0 +1,44 @@
+package br.imd.vision;
+
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+
+public class ButtonHandler {
+	
+	private JButton inserir, salvar;
+	
+	public ButtonHandler(JButton inserir){
+		this.inserir = inserir;
+	}
+	
+	public void actionPerfomed(ActionEvent evento){
+		if(evento.getSource() == inserir){
+			JOptionPane.showMessageDialog(null, "Inserir dados do aluno");
+			
+			inserir.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+					setLayout(new FlowLayout());
+						
+					inserir = new JButton("Inserir");
+					inserir.addActionListener(new ActionListener(){
+						public void actionPerformed(ActionEvent evento){
+							if(evento.getSource() == botao1)
+								JOptionPane.showMessageDialog(null, inserir.getText());
+								
+							}
+						}
+						);
+						add(botao1);
+					}
+				});
+			
+		}
+		if(evento.getSource() == salvar){
+			JOptionPane.showMessageDialog(null, "Dados salvos com sucesso");
+		}
+	}
+}

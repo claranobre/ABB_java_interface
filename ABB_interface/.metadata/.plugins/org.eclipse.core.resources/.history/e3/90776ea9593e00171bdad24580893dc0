@@ -2,15 +2,15 @@ package br.imd.vision;
 
 import java.awt.Container;
 import java.awt.FlowLayout;
+
 import javax.swing.JButton;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class TelaPrincipal extends JFrame{
 	
-	//private JTextField inserir;
+	private JTextField inserir;
 	JDesktopPane dtp = new JDesktopPane();
 	
 	public TelaPrincipal(){
@@ -35,7 +35,8 @@ public class TelaPrincipal extends JFrame{
 	
 	public static void main(String[] args){
 		
-		TelaPrincipal mc = new TelaPrincipal();		
+		TelaPrincipal mc = new TelaPrincipal();
+		CaixaDeTexto textfield = new CaixaDeTexto();		
 		mc.setVisible(true);
 	}
 }
