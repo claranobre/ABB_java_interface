@@ -1,5 +1,3 @@
-package br.imd.control;
-
 public class Tree{
 
 	private No root;
