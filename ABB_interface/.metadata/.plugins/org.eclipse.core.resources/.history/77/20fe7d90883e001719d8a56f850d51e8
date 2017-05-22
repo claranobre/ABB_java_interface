@@ -1,0 +1,22 @@
+package br.imd.vision;
+
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+
+import javax.swing.JOptionPane;
+
+private class RadioButtonHandler implements ItemListener{
+
+	public void itemStateChanged(ItemEvent event) {
+		if(preOrdem.isSelected()){
+			JOptionPane.showMessageDialog(null,"Percurso em Pre Ordem");
+		}
+		if(posOrdem.isSelected()){
+			JOptionPane.showMessageDialog(null,"Percurso em Pos Ordem");
+		}
+		if(emOrdem.isSelected()){
+			JOptionPane.showMessageDialog(null, "Percurso em Ordem");
+		}
+	}
+	
+}

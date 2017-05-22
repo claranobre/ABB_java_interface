@@ -2,11 +2,14 @@ package br.imd.vision;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import br.imd.control.Aluno;
@@ -17,6 +20,8 @@ public class ButtonHandler extends JFrame implements ActionListener {
 	private JButton remove;
 	private JButton imprime;
 	private JButton busca;
+
+	private JRadioButton preOrdem,posOrdem,emOrdem;
 
 	private JTextField tfNome;
 	private JTextField tfMatricula;
@@ -57,6 +62,21 @@ public class ButtonHandler extends JFrame implements ActionListener {
 		}
 		if(evento.getSource() == busca){
 			JOptionPane.showMessageDialog(null, "Buscar dados do aluno: ");
+		}
+	}
+
+	private class RadioButtonHandler implements ItemListener{
+
+		public void itemStateChanged(ItemEvent event) {
+			if(preOrdem.isSelected()){
+				JOptionPane.showMessageDialog(null,"Percurso em Pre Ordem");
+			}
+			if(posOrdem.isSelected()){
+				JOptionPane.showMessageDialog(null,"Percurso em Pos Ordem");
+			}
+			if(emOrdem.isSelected()){
+				JOptionPane.showMessageDialog(null, "Percurso em Ordem");
+			}
 		}
 	}
 }

@@ -1,0 +1,41 @@
+package br.imd.vision;
+
+import br.imd.vision.ButtonHandler;
+import br.imd.vision.ButtonHandler.RadioButtonHandler;
+
+import java.awt.FlowLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JRadioButton;
+
+public class Button extends JFrame{
+	private JButton insere = new JButton ("Inserir");
+	private JButton remove = new JButton ("Remover");
+	private JButton imprime = new JButton ("Imprimir");
+	private JButton busca = new JButton ("Buscar");
+	
+	private ButtonHandler handler;
+	
+	private JRadioButton preOrdem,posOrdem,emOrdem;
+	private RadioButtonHandler handlerRadio;
+	
+	public Button(){
+		setLayout(new FlowLayout());
+		handler = new ButtonHandler(insere, remove, imprime, busca);
+		
+		handlerRadio = new RadioButtonHandler(preOrdem,posOrdem,emOrdem);
+		
+		
+		insere.addActionListener(handler);
+		add(insere);
+		
+		remove.addActionListener(handler);
+		add(remove);
+		
+		imprime.addActionListener(handler);
+		add(imprime);
+		
+		busca.addActionListener(handler);
+		add(busca);
+	}
+}
