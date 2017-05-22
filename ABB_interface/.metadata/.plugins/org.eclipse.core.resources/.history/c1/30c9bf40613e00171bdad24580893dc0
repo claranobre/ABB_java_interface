@@ -1,0 +1,30 @@
+package br.imd.vision;
+public class Button extends JFrame{
+	private JButton inserir = new JButton ("Inserir");
+	private ButtonHandler handler;
+
+	public Button(){
+		setLayout(new FlowLayout());
+		handler = new ButtonHandler(insere);
+		
+		insere.addActionListener(handler);
+		add(insere);
+	
+
+
+			inserir = new JButton("Inserir");
+			inserir.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent evento){
+					if(evento.getSource() == inserir)
+						JOptionPane.showMessageDialog(null, inserir.getText());
+
+				}
+			}
+					);
+			//add(inserir);
+		}
+	}
+
+}
+	
+}

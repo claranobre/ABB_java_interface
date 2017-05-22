@@ -1,0 +1,44 @@
+package br.imd.vision;
+
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class Button extends JFrame{
+	private JButton insere = new JButton ("Inserir");
+	private JButton remove = new JButton ("Remover");
+	private JButton imprime = new JButton ("Imprimir");
+	private JButton busca = new JButton ("Buscar");
+	private ButtonHandler handler;
+	
+	private JTextField aluno;
+	private JTextField matricula;
+	private JLabel alu, mat;
+	
+
+	public Button(){
+		setLayout(new FlowLayout());
+		handler = new ButtonHandler(insere, remove, imprime, busca);
+		
+		aluno = new JLabel("Inserir dados do aluno: ");
+		add(aluno);
+		
+		al = new JTextField(15);
+		add(al);
+		
+		insere.addActionListener(handler);
+		add(insere);
+		
+		remove.addActionListener(handler);
+		add(remove);
+		
+		imprime.addActionListener(handler);
+		add(imprime);
+		
+		busca.addActionListener(handler);
+		add(busca);
+	}
+}

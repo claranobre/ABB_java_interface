@@ -1,0 +1,7 @@
+package br.imd.vision;
+
+import javax.swing.JFrame;
+
+public class CaixaDeTexto extends JFrame{
+	
+}

@@ -1,0 +1,80 @@
+package br.imd.vision;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+import br.imd.control.Aluno;
+
+public class ButtonHandler extends JFrame implements ActionListener {
+
+	private JButton insere;
+	private JButton remove;
+	private JButton imprime;
+	private JButton busca;
+
+	private JTextField tfNome;
+	private JTextField tfMatricula;
+	private JLabel jbNome;
+	private JLabel jbMatricula;
+
+	public ButtonHandler(JButton insere, JButton remove, JButton imprime, JButton busca){
+		this.insere = insere;
+		this.remove = remove;
+		this.imprime = imprime;
+		this.busca = busca;
+	}
+
+	private void inicializarComponentes(){
+				
+		jbNome = new JLabel("Nome: ");
+		tfNome = new JTextField("");
+
+		jbMatricula = new JLabel("Matricula: ");
+		tfMatricula = new JTextField("");
+
+		add(jbNome);
+		add(tfNome);
+
+		add(jbMatricula);
+		add(tfMatricula);
+		
+	}
+	
+	private void definirEventos(){
+		Aluno aluno = new Aluno();
+		aluno.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evento){
+				if(evento.getSource() == insere){
+					JOptionPane.showMessageDialog(null, "Inserir dados do aluno: ");
+					
+					/*tfNome.getText();
+					tfMatricula.getText();*/
+					
+					//String dados = String.valueOf(tfNome.getNome());
+					
+				}
+				if(evento.getSource() == remove){
+					JOptionPane.showMessageDialog(null, "Inserir nome do aluno que você quer remover: ");
+				}
+				if(evento.getSource() == imprime){
+					JOptionPane.showMessageDialog(null, "Arvore:");
+				}
+				if(evento.getSource() == busca){
+					JOptionPane.showMessageDialog(null, "Buscar dados do aluno: ");
+				}
+			}
+		});
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+}

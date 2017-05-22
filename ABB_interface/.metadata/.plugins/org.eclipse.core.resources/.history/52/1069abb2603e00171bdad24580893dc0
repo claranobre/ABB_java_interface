@@ -1,0 +1,58 @@
+package br.imd.vision;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+
+public class ButtonHandler implements ActionListener {
+
+	private JButton insere;
+	
+	public ButtonHandler(JButton insere){
+		this.insere = insere;
+	}
+	
+	public void actionPerformed(ActionEvent evento){
+		if(evento.getSource() == insere){
+			JOptionPane.showMessageDialog(null, "Inserir dados do aluno: ");
+		}
+	}	
+	
+	
+	private JButton inserir = new JButton ("Inserir");
+	//private JButton salvar = new JButton("Salvar");
+	private ButtonHandler handler;
+
+	public ButtonHandler() {
+		this.inserir = inserir;
+	}
+
+	public void actionPerfomed(ActionEvent evento){
+		setLayout(new FlowLayout());
+		handler = new ButtonHandler(inserir);
+
+		if(evento.getSource() == inserir){
+			JOptionPane.showMessageDialog(null, "Inserir dados do aluno");
+			inserir.addActionListener(handler);
+			//add(inserir);
+
+
+			inserir = new JButton("Inserir");
+			inserir.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent evento){
+					if(evento.getSource() == inserir)
+						JOptionPane.showMessageDialog(null, inserir.getText());
+
+				}
+			}
+					);
+			//add(inserir);
+		}
+	}
+
+	private void setLayout(FlowLayout flowLayout) {
+		// TODO Auto-generated method stub
+		
+	}
+}

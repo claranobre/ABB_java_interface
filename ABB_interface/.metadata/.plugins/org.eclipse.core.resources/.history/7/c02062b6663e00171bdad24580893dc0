@@ -1,0 +1,8 @@
+package br.imd.vision;
+
+import javax.swing.JFrame;
+
+public class CaixaDeTexto extends JFrame{
+	private JTextField fixa, caixa;
+	private JButton exibe, limpa;
+}

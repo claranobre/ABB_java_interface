@@ -1,0 +1,20 @@
+package br.imd.vision;
+
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class Button extends JFrame{
+	private JButton insere = new JButton ("Inserir");
+	private JButton remove = new JButton ("Remover");
+	private ButtonHandler handler;
+
+	public Button(){
+		setLayout(new FlowLayout());
+		handler = new ButtonHandler(insere);
+		
+		insere.addActionListener(handler);
+		add(insere);
+	}
+}

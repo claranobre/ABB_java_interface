@@ -1,0 +1,38 @@
+package br.imd.vision;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+
+public class CaixaDeTexto extends JFrame{
+	private JTextField fixa, caixa;
+	private JButton exibe, limpa;
+
+	fixa = new JTextField("Não é possível alterar essa caixa de texto");
+	fixa.setEditable(false);
+	add(fixa);
+
+	caixa=new JTextField(20);
+	add(caixa);
+
+	exibe = new JButton("Exibir");
+	exibe.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent evento){
+			if(evento.getSource() == exibe)
+				JOptionPane.showMessageDialog(null, caixa.getText());
+		}
+	}
+			);
+	add(exibe);
+
+	limpa = new JButton("Limpar");
+	limpa.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent evento){
+			if(evento.getSource() == limpa)
+				caixa.setText("");
+		}
+	}
+			);
+	add(limpa);
+}
+}

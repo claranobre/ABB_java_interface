@@ -1,0 +1,41 @@
+package br.imd.vision;
+
+import java.awt.Container;
+import java.awt.FlowLayout;
+import javax.swing.JButton;
+import javax.swing.JDesktopPane;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+public class TelaPrincipal extends JFrame{
+	
+	//private JTextField inserir;
+	JDesktopPane dtp = new JDesktopPane();
+	
+	public TelaPrincipal(){
+	//Container ct = this.getContentPane();
+	//ct.setLayout(new FlowLayout());
+	
+	Button botao1 = new Button();
+	JButton botao2 = new JButton("Remover");
+	JButton botao3 = new JButton("Buscar");
+	JButton botao4 = new JButton("Imprimir");
+	
+	add(botao1);
+	add(botao2);
+	add(botao3);
+	add(botao4);
+	
+	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	setSize(400, 350);
+	setTitle("Botoes");
+	
+	}
+	
+	public static void main(String[] args){
+		
+		TelaPrincipal mc = new TelaPrincipal();		
+		mc.setVisible(true);
+	}
+}

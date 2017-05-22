@@ -1,0 +1,16 @@
+package br.imd.vision;
+
+import javax.swing.JDesktopPane;
+import javax.swing.JFrame;
+
+public class TelaPrincipal extends JFrame{
+	
+	public static void main(String[] args){
+		Button botao1 = new Button();
+		
+		botao1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		botao1.setSize(350, 70);
+		botao1.setTitle("Botoes");
+		botao1.setVisible(true);
+	}
+}

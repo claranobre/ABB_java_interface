@@ -1,0 +1,56 @@
+package br.imd.vision;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+public class ButtonHandler implements ActionListener {
+
+	private JButton insere;
+	private JButton remove;
+	private JButton imprime;
+	private JButton busca;
+	
+	private JTextField aluno, matricula;
+	private JLabel alu, mat;
+	
+	public ButtonHandler(JButton insere, JButton remove, JButton imprime, JButton busca){
+		this.insere = insere;
+		this.remove = remove;
+		this.imprime = imprime;
+		this.busca = busca;
+	}
+
+	public void actionPerformed(ActionEvent evento){
+		if(evento.getSource() == insere){
+			JOptionPane.showMessageDialog(null, "Inserir dados do aluno: ");
+			
+			alu = new JLabel("Nome: ");
+			add(alu);
+			aluno = new JTextField(15);
+			add(aluno);
+			mat = new JLabel("Matricula: ");
+			add(mat);
+			matricula = new JTextField(15);
+			add(matricula);
+		}
+		if(evento.getSource() == remove){
+			JOptionPane.showMessageDialog(null, "Inserir nome do aluno que você quer remover: ");
+		}
+		if(evento.getSource() == imprime){
+			JOptionPane.showMessageDialog(null, "Arvore:");
+		}
+		if(evento.getSource() == busca){
+			JOptionPane.showMessageDialog(null, "Buscar dados do aluno: ");
+		}
+	}
+
+	private void add(JLabel alu2) {
+		// TODO Auto-generated method stub
+		
+	}
+}
